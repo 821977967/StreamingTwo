@@ -1,29 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d2fe885b-77d1-4fca-ac54-0bb9ac4fd390" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/StreamingMysqlone$$anonfun$1$$anonfun$apply$2$$anonfun$apply$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/StreamingMysqlone$$anonfun$1$$anonfun$apply$2$$anonfun$apply$3.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/StreamingMysqlone$$anonfun$1$$anonfun$apply$2.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/StreamingMysqlone$$anonfun$1.class" afterPath="$PROJECT_DIR$/target/classes/StreamingMysqlone$$anonfun$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/StreamingMysqlone$$anonfun$10.class" afterPath="$PROJECT_DIR$/target/classes/StreamingMysqlone$$anonfun$10.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/StreamingMysqlone$$anonfun$2.class" afterPath="$PROJECT_DIR$/target/classes/StreamingMysqlone$$anonfun$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/StreamingMysqlone$$anonfun$3.class" afterPath="$PROJECT_DIR$/target/classes/StreamingMysqlone$$anonfun$3.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/StreamingMysqlone$$anonfun$4.class" afterPath="$PROJECT_DIR$/target/classes/StreamingMysqlone$$anonfun$4.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/StreamingMysqlone$$anonfun$5.class" afterPath="$PROJECT_DIR$/target/classes/StreamingMysqlone$$anonfun$5.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/StreamingMysqlone$$anonfun$6.class" afterPath="$PROJECT_DIR$/target/classes/StreamingMysqlone$$anonfun$6.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/StreamingMysqlone$$anonfun$7.class" afterPath="$PROJECT_DIR$/target/classes/StreamingMysqlone$$anonfun$7.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/StreamingMysqlone$$anonfun$8.class" afterPath="$PROJECT_DIR$/target/classes/StreamingMysqlone$$anonfun$8.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/StreamingMysqlone$$anonfun$9.class" afterPath="$PROJECT_DIR$/target/classes/StreamingMysqlone$$anonfun$9.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/StreamingMysqlone$$anonfun$main$1$$anonfun$apply$4$$anonfun$apply$5.class" afterPath="$PROJECT_DIR$/target/classes/StreamingMysqlone$$anonfun$main$1$$anonfun$apply$4$$anonfun$apply$5.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/StreamingMysqlone$$anonfun$main$1$$anonfun$apply$4.class" afterPath="$PROJECT_DIR$/target/classes/StreamingMysqlone$$anonfun$main$1$$anonfun$apply$4.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/StreamingMysqlone$$anonfun$main$1.class" afterPath="$PROJECT_DIR$/target/classes/StreamingMysqlone$$anonfun$main$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/StreamingMysqlone$.class" afterPath="$PROJECT_DIR$/target/classes/StreamingMysqlone$.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/StreamingMysqlone.class" afterPath="$PROJECT_DIR$/target/classes/StreamingMysqlone.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/StreamingMysqlone.scala" afterPath="$PROJECT_DIR$/src/main/scala/StreamingMysqlone.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/.scala_dependencies" afterPath="$PROJECT_DIR$/target/.scala_dependencies" />
-    </list>
+    <list default="true" id="d2fe885b-77d1-4fca-ac54-0bb9ac4fd390" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
