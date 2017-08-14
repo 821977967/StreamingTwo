@@ -39,22 +39,22 @@ object StreamingMysqlone {
     val valAfter1 = after1.map(x => ("click_Counts", x.getString("value").toInt))
     //    计算点击总数
     val click_Counts = valAfter1.updateStateByKey(updateFunc, new HashPartitioner(ssc.sparkContext.defaultParallelism), true)
-
+    val mysqldata = 10000
     //插入mysql数据库
     click_Counts.foreachRDD(rdd => {
       rdd.foreachPartition(partitionOfRecords => {
         val conn = ConnectPool.getConnection
         conn.setAutoCommit(false); //设为手动提交
-        try{
-        val stmt = conn.createStatement();
+        try {
+          val stmt = conn.createStatement();
 
-        partitionOfRecords.foreach(record => {
+          partitionOfRecords.foreach(record => {
 
-          stmt.addBatch("insert into dm_sstreaming_getdata_test (insert_time,click_sum) values (now()," + record._2 + " + " + 10000 + ")");
-        })
+            stmt.addBatch("insert into dm_sstreaming_getdata_test (insert_time,click_sum) values (now()," + record._2 + " + " + mysqldata + ")");
+          })
 
-        stmt.executeBatch();
-        conn.commit(); //提交事务
+          stmt.executeBatch();
+          conn.commit(); //提交事务
         }
         finally {
           conn.close();
