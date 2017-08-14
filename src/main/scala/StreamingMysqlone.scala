@@ -28,6 +28,8 @@ object StreamingMysqlone {
     val sparkConf = new SparkConf().setAppName("LSKafkaWordCount").setMaster("local[2]")
     //设置允许多个sparkconf对象运行
     sparkConf.set("spark.driver.allowMultipleContexts", "true")
+
+    //----------------- 设置从Mysql中取最后一次插入的数据----------------
     //获取context
     val sc = new SparkContext(sparkConf)
     //获取sqlContext
@@ -40,16 +42,17 @@ object StreamingMysqlone {
     //加载mysql数据表
     //    val df_test1: DataFrame = sqlContext.read.jdbc(uri, "user_t", prop)
     val df_test2: DataFrame = sqlContext.read.jdbc(uri, "dm_sstreaming_getdata_test", prop)
+
     //获取最后一行数据
     val lastData = df_test2.select("insert_time", "click_sum").collect().last
-    val lastClick = lastData.get(1)
-    println("-------------：" + lastClick)
+    val beforSum = Some(lastData.get(1)).getOrElse(0)
 
 
+    //    println("-------------：" + lastClick)
+
+    //---------------streaming代码------------------
     val ssc = new StreamingContext(sparkConf, Seconds(5))
     ssc.checkpoint("/Users/liushuai/Desktop/temp/kafkalogs")
-
-
     //"alog-2016-04-16,alog-2016-04-17,alog-2016-04-18"
     val topicMap = topics.split(",").map((_, numThreads.toInt)).toMap
     val dstream = KafkaUtils.createStream(ssc, zkQuorum, group, topicMap, StorageLevel.MEMORY_AND_DISK_SER)
@@ -69,7 +72,8 @@ object StreamingMysqlone {
     //    计算点击总数
     val click_Counts = valAfter1.updateStateByKey(updateFunc, new HashPartitioner(ssc.sparkContext.defaultParallelism), true)
     //    val mysqldata = 10000
-    //插入mysql数据库
+
+    //--------------插入mysql数据库---------------
     click_Counts.foreachRDD(rdd => {
       rdd.foreachPartition(partitionOfRecords => {
         val conn = ConnectPool.getConnection
@@ -79,7 +83,7 @@ object StreamingMysqlone {
 
           partitionOfRecords.foreach(record => {
 
-            stmt.addBatch("insert into dm_sstreaming_getdata_test (insert_time,click_sum) values (now()," + record._2 + " + " + lastClick + ")");
+            stmt.addBatch("insert into dm_sstreaming_getdata_test (insert_time,click_sum) values (now()," + record._2 + " + " + beforSum + ")");
           })
 
           stmt.executeBatch();
