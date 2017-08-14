@@ -50,7 +50,7 @@ object StreamingMysqlone {
 
         partitionOfRecords.foreach(record => {
 
-          stmt.addBatch("insert into dm_sstreaming_getdata_test (insert_time,click_sum) values (now(),'" + record._2 + "')");
+          stmt.addBatch("insert into dm_sstreaming_getdata_test (insert_time,click_sum) values (now()," + record._2 + " + " + 10000 + ")");
         })
 
         stmt.executeBatch();

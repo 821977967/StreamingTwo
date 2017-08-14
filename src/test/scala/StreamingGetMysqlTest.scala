@@ -3,7 +3,7 @@ import java.util.Properties
 import org.apache.spark.sql.{DataFrame, SQLContext}
 import org.apache.spark.{SparkConf, SparkContext}
 
-object ScalaTest {
+object StreamingGetMysqlTest {
   //数据库配置
 //  lazy val url = "jdbc:mysql://your_ip:3306/my_test"
 //  lazy val username = "root"
@@ -16,12 +16,12 @@ object ScalaTest {
   def main(args: Array[String]) {
     //    val sparkConf = new SparkConf().setAppName("sparkSqlTest").setMaster("local[2]").set("spark.app.id", "sql")
     val sparkConf = new SparkConf().setAppName("sparkSqlTest").setMaster("local[2]")
-    //序列化
-    sparkConf.set("spark.serializer", "org.apache.spark.serializer.KryoSerializer")
-    sparkConf.set("spark.kryoserializer.buffer", "256m")
-    sparkConf.set("spark.kryoserializer.buffer.max", "2046m")
-    sparkConf.set("spark.akka.frameSize", "500")
-    sparkConf.set("spark.rpc.askTimeout", "30")
+    //序列化,若不设置,则为默认值。不影响程序正常执行
+//    sparkConf.set("spark.serializer", "org.apache.spark.serializer.KryoSerializer")
+//    sparkConf.set("spark.kryoserializer.buffer", "256m")
+//    sparkConf.set("spark.kryoserializer.buffer.max", "2046m")
+//    sparkConf.set("spark.akka.frameSize", "500")
+//    sparkConf.set("spark.rpc.askTimeout", "30")
     //获取context
     val sc = new SparkContext(sparkConf)
     //获取sqlContext
